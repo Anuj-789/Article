@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Prabhav</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f7f4ef;
+      color:#333;
+      font-family:"Poppins",sans-serif;
+    }
+
+    /* ================= MAIN WEBSITE ================= */
+
+    #mainWebsite{
+      display:block;
+    }
+
+    header{
+      background:linear-gradient(to bottom,#fff7ef,#ffeef6);
+      padding:70px 20px 50px;
+      text-align:center;
+      border-bottom:1px solid #eee;
+    }
+
+   
+.logo img{
+        height:150px;
+        width:150px;
+
+        border-radius:50%;
+        object-fit:cover;
+
+        /* 🎨 theme matching fix */
+        background: radial-gradient(circle at top,#fff7ef,#ffeef6,#f7f4ef);
+
+        padding:8px;
+
+        /* purple brand match */
+        border:3px solid rgba(107,76,165,0.18);
+
+        /* soft glow */
+        box-shadow:0 12px 30px rgba(107,76,165,0.18);
+
+        transition:0.4s ease;
+    }
+
+    .subtitle{
+      margin-top:5px;
+      color:#7b748b;
+      font-size:19px;
+      max-width:760px;
+      margin-inline:auto;
+      line-height:1.9;
+    }
+
+    /* ================= MENU ================= */
+
+    .menu{
+      margin-top:20px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:18px;
+      flex-wrap:nowrap;
+      overflow-x:auto;
+      padding-bottom:5px;
+    }
+
+    .menu button{
+      min-width:140px;
+      border:none;
+      padding:14px 30px;
+      border-radius:35px;
+      background:white;
+      color:#6b4ca5;
+      cursor:pointer;
+      font-size:16px;
+      transition:0.3s;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+      font-weight:600;
+    }
+
+    .menu button:hover{
+      background:#6b4ca5;
+      color:white;
+      transform:translateY(-3px);
+    }
+
+    /* ================= CONTAINER ================= */
+
+    .container{
+      max-width:1180px;
+      margin:auto;
+      padding:60px 20px;
+    }
+
+    .section{
+      display:none;
+      animation:fade 0.4s ease;
+    }
+
+    .active{
+      display:block;
+    }
+
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+      background:white;
+      padding:55px;
+      border-radius:32px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .hero h1{
+      color:#6b4ca5;
+      margin-bottom:25px;
+      font-size:48px;
+      line-height:1.3;
+    }
+
+    .hero p{
+      color:#666;
+      line-height:2;
+      font-size:18px;
+    }
+
+    .highlight{
+      color:#6b4ca5;
+      font-weight:600;
+    }
+
+    /* ================= CARDS ================= */
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:28px;
+      margin-top:45px;
+    }
+
+    .card{
+      background:#fff;
+      padding:35px;
+      border-radius:26px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.05);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+    }
+
+    .card h3{
+      color:#6b4ca5;
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .card p{
+      color:#666;
+      line-height:1.8;
+    }
+
+    /* ================= FEATURES ================= */
+
+    .feature-section{
+      margin-top:55px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:35px;
+    }
+
+    .feature-box{
+      background:white;
+      padding:40px;
+      border-radius:28px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .feature-box h2{
+      color:#6b4ca5;
+      margin-bottom:20px;
+      font-size:30px;
+    }
+
+    .feature-box p{
+      color:#666;
+      line-height:2;
+      font-size:17px;
+    }
+
+    /* ================= ARTICLES ================= */
+
+    .article-box{
+      background:white;
+      padding:35px;
+      border-radius:28px;
+      margin-bottom:25px;
+      cursor:pointer;
+      transition:0.3s;
+      box-shadow:0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    .article-box:hover{
+      transform:translateY(-5px);
+      background:#fff9fc;
+    }
+
+    .article-box h2{
+      color:#6b4ca5;
+      margin-bottom:12px;
+      font-size:30px;
+    }
+
+    .article-box p{
+      color:#777;
+      line-height:1.8;
+      font-size:17px;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact{
+      background:white;
+      padding:50px;
+      border-radius:30px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.06);
+      text-align:center;
+    }
+
+    .contact h1{
+      color:#6b4ca5;
+      margin-bottom:20px;
+      font-size:42px;
+    }
+
+    .contact p{
+      color:#666;
+      line-height:2.2;
+      font-size:18px;
+    }
+
+    /* ================= ARTICLE PAGE ================= */
+
+    #articlePage{
+      display:none;
+      min-height:100vh;
+      background:#faf7f2;
+      padding:40px 20px;
+    }
+
+    .article-container{
+      max-width:900px;
+      margin:auto;
+      background:white;
+      padding:50px;
+      border-radius:32px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .article-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:45px;
+      flex-wrap:wrap;
+      gap:15px;
+    }
+
+    .article-top button{
+      border:none;
+      padding:14px 26px;
+      border-radius:35px;
+      font-size:15px;
+      cursor:pointer;
+      transition:0.3s;
+      font-weight:600;
+    }
+
+    .back-btn{
+      background:#f1e9ff;
+      color:#6b4ca5;
+    }
+
+    .download-btn{
+      background:#6b4ca5;
+      color:white;
+    }
+
+    .article-top button:hover{
+      transform:translateY(-2px);
+    }
+
+    .article-title{
+      font-size:56px;
+      color:#6b4ca5;
+      margin-bottom:25px;
+      line-height:1.4;
+      letter-spacing:1px;
+    }
+
+    .article-image{
+      width:100%;
+      border-radius:28px;
+      margin-bottom:40px;
+    }
+
+    /* ================= PREMIUM ARTICLE TEXT ================= */
+
+    .article-content{
+      color:#444;
+      font-size:24px;
+      line-height:2.5;
+      letter-spacing:0.1px;
+      word-spacing:3px;
+
+      font-family: Georgia, "Noto Serif Devanagari", serif;
+
+      text-align:justify;
+
+      padding-top:10px;
+    }
+
+    .article-content p{
+      margin-bottom:38px;
+    }
+
+    /* ================= UP BUTTON ================= */
+
+    .up-btn{
+      margin-top:55px;
+      text-align:center;
+    }
+
+    .up-btn button{
+      border:none;
+      background:#6b4ca5;
+      color:white;
+      padding:16px 34px;
+      border-radius:40px;
+      font-size:17px;
+      cursor:pointer;
+      transition:0.3s;
+      box-shadow:0 8px 18px rgba(0,0,0,0.08);
+      font-weight:600;
+    }
+
+    .up-btn button:hover{
+      transform:translateY(-4px);
+      background:#5c3f94;
+    }
+
+    footer{
+      text-align:center;
+      padding:35px;
+      color:#777;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media(max-width:850px){
+
+      .feature-section{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+    @media(max-width:700px){
+  header{
+padding: 25px 20px;
+
+  }
+  .container{
+padding: 20px 20px;
+  }
+      .logo{
+        font-size:42px;
+      }
+
+      .hero{
+        padding:35px;
+      }
+      .hero p{
+     font-size: 18px;
+     line-height: 1.6 ;
+      }
+
+      .hero h1{
+        font-size:24px;
+        margin-bottom: 10px;
+      }
+
+      .menu{
+        justify-content:flex-center;
+       
+      }
+
+      .menu button{
+        min-width:90px;
+        font-size:15px;
+        padding:13px 20px;
+      }
+
+      .article-title{
+        font-size:20px;
+      }
+
+      .article-container{
+        padding:13px;
+      }
+
+      .article-content{
+        font-size:17px;
+        line-height:1.4;
+        word-spacing:2px;
+      }
+        .article-box{
+      
+      padding:25px;
+      border-radius:20px;
+      margin-bottom:24px;
+      cursor:pointer;
+      transition:0.3s;
+      box-shadow:0 8px 20px rgba(0,0,0,0.05);
+    }
+      .article-content p{
+      font-size:15px;
+      margin-bottom: 15px;
+    }
+       .article-box h2{
+     
+      margin-bottom:10px;
+      font-size:20px;
+    }
+    .article-box p{
+      color:#777;
+      line-height:1.4;
+      font-size:15px;
+    }
+
+    footer{
+      text-align:center;
+      padding:15px 25px 35px 25px;
+      color:#777;
+    }
+    .logo img{
+        border-radius: 50%;
+        min-height:"150PX";
+        max-height: "179px";
+         width:"200px"
+    }
+
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ================= MAIN WEBSITE ================= -->
+
+<div id="mainWebsite">
+
+  <header>
+
+    <div class="logo"><img src="image1.png" alt="" height="150PX"  width="200px"  ></div>
+
+    <div class="subtitle">
+      प्रभाव - Anuj Gupta
+    </div>
+
+    <div class="menu">
+      <button onclick="showSection('about')">About</button>
+      <button onclick="showSection('articles')">Articles</button>
+      <button onclick="showSection('contact')">Contact</button>
+    </div>
+
+  </header>
+
+  <div class="container">
+
+    <!-- ABOUT -->
+
+    <div id="about" class="section active">
+
+      <div class="hero">
+
+        <h1>
+          Welcome to <span class="highlight">Velora</span>
+        </h1>
+
+        <p>
+          Velora ek premium digital article platform hai jahan modern aesthetics aur meaningful content ko ek sath combine kiya gaya hai.
+          Yahan readers ko ek calm, elegant aur distraction-free environment milta hai jahan woh articles ko peacefully enjoy kar sakte hain.
+        </p>
+
+        <div class="cards">
+
+          <div class="card">
+            <h3>Modern Interface</h3>
+
+            <p>
+              Beautiful layouts aur soft aesthetic colors users ko premium experience dete hain.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Creative Writing</h3>
+
+            <p>
+              Stories, technology, thoughts aur inspiration se related engaging content.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Comfort Reading</h3>
+
+            <p>
+              Special typography aur spacing Hindi articles ko bhi elegant feel deti hai.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="feature-section">
+
+        <div class="feature-box">
+
+          <h2>Why Readers Love Velora</h2>
+
+          <p>
+            Velora ka interface specially is tarah design kiya gaya hai ki readers ko long articles padhte waqt eye comfort feel ho.
+            Website minimal aur clean design follow karti hai jisse focus sirf content par rahe.
+          </p>
+
+        </div>
+
+        <div class="feature-box">
+
+          <h2>Designed for Writers</h2>
+
+          <p>
+            Agar aap Hindi me articles likhte ho to Velora ka text layout aur spacing aapke content ko aur professional aur readable bana dega.
+            Iska elegant structure modern blogging platforms jaisa premium feel deta hai.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ARTICLES -->
+
+    <div id="articles" class="section">
+
+      <div class="article-box" onclick="openArticle()">
+
+        <h2>The Future of Artificial Intelligence</h2>
+
+        <p>
+          Discover how AI is transforming modern technology and human lifestyle.
+        </p>
+
+      </div>
+
+      <div class="article-box">
+
+        <h2>Minimal Design Trends</h2>
+
+        <p>
+          Why simple and aesthetic interfaces create better user experiences.
+        </p>
+
+      </div>
+
+      <div class="article-box">
+
+        <h2>Powerful Productivity Habits</h2>
+
+        <p>
+          Daily routines that improve creativity, focus and consistency.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- CONTACT -->
+
+    <div id="contact" class="section">
+
+      <div class="contact">
+
+        <h1>Contact Us</h1>
+
+        <p>
+          Email : aknuj2378@gmail.com <br>
+          Instagram : @anuj-gupta.96 <br>
+          Phone : +91 7480982980
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    © Articles by Anuj Gupta.
+  </footer>
+
+</div>
+
+<!-- ================= ARTICLE PAGE ================= -->
+
+<div id="articlePage">
+
+  <div class="article-container" id="topArticle">
+
+    <div class="article-top">
+
+      <button class="back-btn" onclick="goBack()">
+        ← Back
+      </button>
+
+      <button class="download-btn">
+        ⬇ Download
+      </button>
+
+    </div>
+
+    <h1 class="article-title">
+      The Future of Artificial Intelligence
+    </h1>
+
+    <img
+      class="article-image"
+      src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1400&auto=format&fit=crop"
+    >
+
+    <div class="article-content">
+
+      <p>
+        Artificial Intelligence आज की दुनिया की सबसे तेज़ी से बढ़ने वाली technologies में से एक बन चुकी है।
+        आज लगभग हर industry में AI का इस्तेमाल किया जा रहा है — चाहे वो healthcare हो,
+        education हो या business sector।
+      </p>
+
+      <p>
+        आने वाले समय में AI केवल automation तक सीमित नहीं रहेगा,
+        बल्कि यह इंसानों की daily life का एक महत्वपूर्ण हिस्सा बन जाएगा।
+        Smart systems लोगों के काम को आसान, तेज़ और अधिक efficient बनाएंगे।
+      </p>
+
+      <p>
+        इसी वजह से दुनिया भर की बड़ी companies Artificial Intelligence पर लगातार invest कर रही हैं।
+        Experts का मानना है कि आने वाले वर्षों में AI modern technology की direction पूरी तरह बदल सकता है।
+      </p>
+
+      <p>
+        Artificial Intelligence का future जितना exciting दिखाई देता है,
+        उतना ही challenging भी है। Responsible innovation और ethical development
+        आने वाले समय में सबसे ज़्यादा महत्वपूर्ण होंगे।
+      </p>
+
+      <p>
+        यही कारण है कि AI को आने वाले दशक की सबसे powerful technology माना जा रहा है।
+        यह केवल machines को smart नहीं बना रहा,
+        बल्कि पूरी दुनिया के काम करने के तरीके को बदल रहा है।
+      </p>
+
+    </div>
+
+    <!-- UP BUTTON -->
+
+    <div class="up-btn">
+
+      <button onclick="scrollTopPage()">
+        ↑ Back To Top
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+  function showSection(id){
+
+    let sections = document.querySelectorAll('.section');
+
+    sections.forEach(section=>{
+      section.classList.remove('active');
+    });
+
+    document.getElementById(id).classList.add('active');
+
+  }
+
+  function openArticle(){
+
+    document.getElementById('mainWebsite').style.display = "none";
+
+    document.getElementById('articlePage').style.display = "block";
+
+    window.scrollTo(0,0);
+
+  }
+
+  function goBack(){
+
+    document.getElementById('articlePage').style.display = "none";
+
+    document.getElementById('mainWebsite').style.display = "block";
+
+    window.scrollTo(0,0);
+
+  }
+
+  function scrollTopPage(){
+
+    document.getElementById('topArticle').scrollIntoView({
+      behavior:"smooth"
+    });
+
+  }
+
+</script>
+
+</body>
+</html>
